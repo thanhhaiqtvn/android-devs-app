@@ -11,7 +11,7 @@ android {
     compileSdk = libs.versions.compileSdkVersion.get().toInt()
 
     defaultConfig {
-        applicationId = "nl.jovmit.androiddevs"
+        applicationId = "com.haidoan.androiddevs"
         minSdk = libs.versions.minSdkVersion.get().toInt()
         targetSdk = libs.versions.compileSdkVersion.get().toInt()
         versionCode = 1
@@ -23,6 +23,15 @@ android {
         }
     }
 
+    // signingConfigs {
+    //     release {
+    //         storeFile = file("android-devs-keystore")
+    //         storePassword = "QWEqwe123!@#"
+    //         keyAlias = "android-devs"
+    //         keyPassword = "QWEqwe123!@#KEY_123"
+    //     }
+    // }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -30,6 +39,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // signingConfig = signingConfigs.release
         }
     }
 
